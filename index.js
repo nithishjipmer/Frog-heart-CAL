@@ -33,7 +33,7 @@ var mqls = [
 function mediaqueryresponse(mql) {
   if (mqls[0].matches) {
     // ipad query matched
-    shown = 540;
+    shown = 100;
   }
   if (mqls[1].matches) {
     // ipad pro query matched
