@@ -88,9 +88,9 @@ function roll(){
     }else{
       progress.value = 0;
     }
-    setTimeout(() => {
+    
       requestAnimationFrame(roll);
-    }, 1000 / fps);
+   
   }
 }
 
