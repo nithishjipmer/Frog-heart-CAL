@@ -76,7 +76,7 @@ function animate() {
 
   roll();
 }
-const fps = 100;
+const fps = 50;
 function roll() {
   scroll.scrollLeft += 1;
   if (scroll.scrollLeft < imgWidth * n) {
