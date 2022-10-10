@@ -78,9 +78,9 @@ function roll(){
     if (scroll.scrollLeft < imgWidth * n) {
       let diff = imgWidth * n - scroll.scrollLeft;
       if (diff < 1 && king == 1) {
-        setTimeout(() => {
+        
           run();
-        }, 3000 / fps);
+        
       }
     let progress = document.getElementById("bar");
     if (queen == 0){
