@@ -24,7 +24,7 @@ const progress = document.getElementById("bar");
 function myFunction(x) {
   if (x.matches) { // If media query matches
     shown = 580;
-    don = 1;
+    don = 2;
     }
 }
 var x = window.matchMedia("(max-width: 1180px)");
