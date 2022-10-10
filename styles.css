@@ -77,33 +77,22 @@ h4 {
 }
 
 #bar {
-    height: 50%;
+    height: 40%;
 }
 
-/* for ipad */
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-    #bar {
-        height: 20px;
-    }
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
 }
 
-/* for ipad pro */
-@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-    #bar {
-            height: 80%;
-        }
+progress[value]::-webkit-progress-bar {
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
 
-/* for ipad pro 12.9' */
-@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-    #bar {
-            height: 80%;
-        }
+progress[value]::-webkit-progress-value {
+    background-color: #000000;
+    border-radius: 2px;
 }
 
-/* ipad air */
-@media only screen and (min-device-width: 1180px) and (max-device-width: 1180px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-    #bar {
-            height: 80%;
-        }
-}
