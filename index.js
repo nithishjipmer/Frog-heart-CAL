@@ -1,4 +1,4 @@
-var shown = 580;
+var shown = 620;
 var table;
 table = document.getElementById("drugtable");
 var n = 0
