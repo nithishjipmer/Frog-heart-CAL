@@ -16,8 +16,8 @@ correctAns = correctAns = table.options[rdm].text;
 // responsive
 function myFunction(x) {
   if (x.matches) { // If media query matches
-    shown = 913;
-    imgWidth = 200;
+    shown = 580;
+    imgWidth = 190;
     don = 2;
     }
 }
