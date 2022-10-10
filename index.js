@@ -77,7 +77,7 @@ function roll(){
     scroll.scrollLeft += 1;
     if (scroll.scrollLeft < imgWidth * n) {
       let diff = imgWidth * n - scroll.scrollLeft;
-      if (diff < 1 && king == 1) {
+      if (diff < 5 && king == 1) {
         
           run();
         
