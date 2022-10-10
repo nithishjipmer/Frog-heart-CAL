@@ -4,7 +4,6 @@ body {
     /* Hide horizontal scrollbar */
 }
 
-
 h1,
 h4 {
     color: black;
@@ -49,6 +48,8 @@ h4 {
     overflow-y: hidden;
 }
 
+
+
 .imgcontainer {
     margin-top: 8%;
 }
@@ -62,8 +63,8 @@ h4 {
     font-size: larger;
 }
 
-.mid2 input {
-    margin-top: 8%;
+.mid2 p {
+    margin: 0;
 }
 
 .mid3 button {
@@ -77,4 +78,32 @@ h4 {
 
 #bar {
     height: 50%;
+}
+
+/* for ipad */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    #bar {
+        height: 80%;
+    }
+}
+
+/* for ipad pro */
+@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    #bar {
+            height: 80%;
+        }
+}
+
+/* for ipad pro 12.9' */
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    #bar {
+            height: 80%;
+        }
+}
+
+/* ipad air */
+@media only screen and (min-device-width: 1180px) and (max-device-width: 1180px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    #bar {
+            height: 80%;
+        }
 }
