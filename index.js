@@ -19,6 +19,7 @@ rdm = Math.floor(Math.random() * 8);
 correctAns = correctAns = table.options[rdm].text;
 const stopBtn = document.getElementById("stop-btn")
 const progress = document.getElementById("bar");
+const ansBtn = document.getElementById("answer-btn")
 
 // responsive
 function myFunction(x) {
@@ -109,6 +110,7 @@ function animate() {
     ctx.font = "15px Georgia";
     ctx.fillStyle = "white";
     ctx.fillText("Unk", shown - imgWidth + 18, 220);
+    ansBtn.disabled = false;
   }
 
   roll();
@@ -170,6 +172,7 @@ function stop() {
 function final() {
   unk = 1;
   table.disabled = true;
+  table.options[0].innerText = "unknown";
 }
 
 function answer() {
