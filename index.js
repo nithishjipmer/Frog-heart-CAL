@@ -22,66 +22,66 @@
   const ansBtn = document.getElementById("answer-btn")
 
 
-  ipad();
-  function ipad() {
-    const mql = window.matchMedia(
-      "screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: landscape)"
-    );
+//   ipad();
+//   function ipad() {
+//     const mql = window.matchMedia(
+//       "screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: landscape)"
+//     );
 
-    checkMedia(mql);
-    mql.addListener(checkMedia);
+//     checkMedia(mql);
+//     mql.addListener(checkMedia);
 
-    function checkMedia(mql) {
-      if (mql.matches) {
-        shown = 580;
-        don = 2;
-      }
-    }
-  }
+//     function checkMedia(mql) {
+//       if (mql.matches) {
+//         shown = 580;
+//         don = 2;
+//       }
+//     }
+//   }
 
-  ipadpro();
-  function ipadpro() {
-    const mql = window.matchMedia(
-      "screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape"
-    );
+//   ipadpro();
+//   function ipadpro() {
+//     const mql = window.matchMedia(
+//       "screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape"
+//     );
 
-    checkMedia(mql);
-    mql.addListener(checkMedia);
+//     checkMedia(mql);
+//     mql.addListener(checkMedia);
 
-    function checkMedia(mql) {
-      if (mql.matches) {
-        shown = 580;
-        don = 2;
-      }
-    }
-  }
+//     function checkMedia(mql) {
+//       if (mql.matches) {
+//         shown = 580;
+//         don = 2;
+//       }
+//     }
+//   }
 
-  ipadair();
-  function ipadair() {
-    const mql = window.matchMedia(
-      "screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape)"
-    );
+//   ipadair();
+//   function ipadair() {
+//     const mql = window.matchMedia(
+//       "screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape)"
+//     );
 
-    checkMedia(mql);
-    mql.addListener(checkMedia);
+//     checkMedia(mql);
+//     mql.addListener(checkMedia);
 
-    function checkMedia(mql) {
-      if (mql.matches) {
-        shown = 580;
-        don = 2;
-      }
-    }
-  }
+//     function checkMedia(mql) {
+//       if (mql.matches) {
+//         shown = 580;
+//         don = 2;
+//       }
+//     }
+//   }
   // responsive
-  // function myFunction(x) {
-  //   if (x.matches) { // If media query matches
-  //     shown = 580;
-  //     don = 2;
-  //     }
-  // }
-  // var x = window.matchMedia("(max-width: 1180px)");
-  // myFunction(x) // Call listener function at run time
-  // x.addListener(myFunction) // Attach listener function on state changes
+  function myFunction(x) {
+    if (x.matches) { // If media query matches
+      shown = 580;
+      don = 2;
+      }
+  }
+  var x = window.matchMedia("(max-width: 1180px)");
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
 
   const canvas = document.getElementById("canvas");
   ctx = canvas.getContext("2d");
