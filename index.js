@@ -2,6 +2,7 @@ var shown = 750;
 var table;
 table = document.getElementById("drugtable");
 var n = 0;
+var m = 0;
 var imgWidth = 192;
 var imgHeight = 244;
 var king = 0; // except stop everywhere 1
@@ -10,6 +11,7 @@ var unk = 0;
 var rdm = 0;
 var correctAns;
 var don = 1;
+var baseWidth = imgWidth/4;
 rdm = Math.floor(Math.random() * 8);
 correctAns = correctAns = table.options[rdm].text;
 
@@ -40,7 +42,7 @@ function instill() {
   }
   perform();
   imgTag.onload = animate;
-  scroll.scrollLeft = imgWidth * (n - 1);
+  scroll.scrollLeft = imgWidth * (n - 1) + baseWidth*m;
 }
 
 function perform() {
@@ -64,8 +66,14 @@ function perform() {
 }
 
 function animate() {
-  ctx.translate(imgWidth - 1, 0);
-  ctx.drawImage(imgTag, shown - imgWidth, 0, imgWidth, imgHeight);
+  if (queen == 0){
+    ctx.translate(imgWidth - 1, 0);
+    ctx.drawImage(imgTag, shown - imgWidth, 0, imgWidth, imgHeight);
+  }else {
+    ctx.translate(baseWidth - 1, 0);
+    ctx.drawImage(imgTag, shown - baseWidth, 0, baseWidth, imgHeight);
+  }
+  
   if (unk == 1 && queen == 0) {
     ctx.fillStyle = "black";
     ctx.fillRect(shown - imgWidth + 15, 200, 50, 30);
@@ -76,11 +84,11 @@ function animate() {
 
   roll();
 }
-const fps = 20;
+const fps = 50;
 function roll() {
   scroll.scrollLeft += 1;
-  if (scroll.scrollLeft < imgWidth * n) {
-    let diff = imgWidth * n - scroll.scrollLeft;
+  if (scroll.scrollLeft < imgWidth * n + baseWidth*m) {
+    let diff = imgWidth * n + baseWidth*m- scroll.scrollLeft;
     if (diff < don && king == 1) {
       setTimeout(() => {
         run();
@@ -92,23 +100,31 @@ function roll() {
     } else {
       progress.value = 0;
     }
-    setTimeout(() => {
-      requestAnimationFrame(roll);
-    }, 1000 / fps);
+    
+      setTimeout(() => {
+        requestAnimationFrame(roll);
+      }, 1000 / fps);
+    
   }
 }
 
 function run() {
   king = 1;
   queen = 1;
-  n += 1;
+  m += 1;
   imgTag.src = "images/base.jpg";
   imgTag.onload = animate;
-  scroll.scrollLeft = imgWidth * (n - 1);
+  scroll.scrollLeft = imgWidth * n + baseWidth*(m-1);
 }
 function stop() {
   // queen = 0;
   king = 0;
+  if (queen == 1){
+    scroll.scrollLeft = imgWidth * n + baseWidth * (m);
+  }else {
+    scroll.scrollLeft = imgWidth * (n) + baseWidth * m;
+  }
+  
 }
 
 function final() {
