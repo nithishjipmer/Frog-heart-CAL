@@ -42,7 +42,7 @@ h4 {
 .container-body {
     margin-top: 4%;
     max-height: 550px;
-    max-width: 1000px;
+    max-width: 750px;
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -92,3 +92,32 @@ progress[value]::-webkit-progress-value {
     border-radius: 2px;
 }
 
+/* for ipad */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .container-body {
+        max-width: 580px;
+    }
+}
+
+/* for ipad pro */
+@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    
+    .container-body {
+        max-width: 580px;
+    }
+}
+
+/* for ipad pro 12.9' */
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    
+    .container-body {
+        max-width: 580px;
+    }
+}
+
+/* ipad air */
+@media only screen and (min-device-width: 1180px) and (max-device-width: 1180px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .container-body {
+        max-width: 580px;
+    }
+}
