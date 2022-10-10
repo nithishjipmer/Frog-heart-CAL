@@ -1,79 +1,46 @@
-var shown = 580;
+var shown = 750;
 var table;
 table = document.getElementById("drugtable");
-var n = 0
-var imgWidth = 192; 
+var n = 0;
+var imgWidth = 192;
 var imgHeight = 244;
 var king = 0; // except stop everywhere 1
 var queen = 0; // only while base is running
 var unk = 0;
 var rdm = 0;
 var correctAns;
+var don = 1;
 rdm = Math.floor(Math.random() * 8);
 correctAns = correctAns = table.options[rdm].text;
 
-
-
 // responsive
-// var mqls = [
-//   window.matchMedia(
-//     "(min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)"
-//   ),
-//   window.matchMedia(
-//     "(min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)"
-//   ),
-//   window.matchMedia(
-//     "(min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)"
-//   ),
-//   window.matchMedia(
-//     "(min-device-width: 1180px) and (max-device-width: 1180px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)"
-//   ),
-// ];
-
-// function mediaqueryresponse(mql) {
-//   if (mqls[0].matches) {
-//     // ipad query matched
-//     shown = 580;
-//   }
-//   if (mqls[1].matches) {
-//     // ipad pro query matched
-//     shown = 580;
-//   }
-//   if (mqls[2].matches) {
-//     // for ipad pro 12.9' query matched
-//     shown = 750;
-//   }
-//   if (mqls[1].matches) {
-//     // ipad air
-//     shown = 580;
-//   }
-// }
-
-// for (var i = 0; i < mqls.length; i++) {
-//   mediaqueryresponse(mqls[i]); // call listener function explicitly at run time
-//   mqls[i].addListener(mediaqueryresponse); // attach listener function to listen in on state changes
-// }
-
-
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    shown = 913;
+    imgWidth = 200;
+    don = 2;
+    }
+}
+var x = window.matchMedia("(max-width: 1180px)");
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
 
 const canvas = document.getElementById("canvas");
 ctx = canvas.getContext("2d");
 imgTag = new Image();
 
-
 const scroll = document.getElementById("scroll-element");
 
-
-function instill(){
-    queen = 0;
-    king = 1;
-    n += 1;
-    if (unk == 1){
-      table.selectedIndex = rdm;
-    }
-    perform()
-    imgTag.onload = animate;
-    scroll.scrollLeft = imgWidth * (n - 1);
+function instill() {
+  queen = 0;
+  king = 1;
+  n += 1;
+  if (unk == 1) {
+    table.selectedIndex = rdm;
+  }
+  perform();
+  imgTag.onload = animate;
+  scroll.scrollLeft = imgWidth * (n - 1);
 }
 
 function perform() {
@@ -96,33 +63,33 @@ function perform() {
   }
 }
 
-function animate(){
-    ctx.translate(imgWidth-1, 0)
-    ctx.drawImage(imgTag, shown - imgWidth, 0, imgWidth, imgHeight);
-    if (unk == 1 && queen == 0){
-      ctx.fillStyle = "black";
-      ctx.fillRect(shown - imgWidth + 15, 200, 50, 30);
-      ctx.font = "15px Georgia";
-      ctx.fillStyle = "white";
-      ctx.fillText("Unk", shown - imgWidth + 18, 220);
-    }
-    
-    roll();
+function animate() {
+  ctx.translate(imgWidth - 1, 0);
+  ctx.drawImage(imgTag, shown - imgWidth, 0, imgWidth, imgHeight);
+  if (unk == 1 && queen == 0) {
+    ctx.fillStyle = "black";
+    ctx.fillRect(shown - imgWidth + 15, 200, 50, 30);
+    ctx.font = "15px Georgia";
+    ctx.fillStyle = "white";
+    ctx.fillText("Unk", shown - imgWidth + 18, 220);
+  }
+
+  roll();
 }
 const fps = 100;
-function roll(){
-    scroll.scrollLeft += 1;
-    if (scroll.scrollLeft < imgWidth * n) {
-      let diff = imgWidth * n - scroll.scrollLeft;
-      if (diff < 2 && king == 1) {
-        setTimeout(() => {
-          run();
-        }, 3000 / fps);
-      }
+function roll() {
+  scroll.scrollLeft += 1;
+  if (scroll.scrollLeft < imgWidth * n) {
+    let diff = imgWidth * n - scroll.scrollLeft;
+    if (diff < don && king == 1) {
+      setTimeout(() => {
+        run();
+      }, 3000 / fps);
+    }
     let progress = document.getElementById("bar");
-    if (queen == 0){
-      progress.value = diff/imgWidth;
-    }else{
+    if (queen == 0) {
+      progress.value = diff / imgWidth;
+    } else {
       progress.value = 0;
     }
     setTimeout(() => {
@@ -139,17 +106,17 @@ function run() {
   imgTag.onload = animate;
   scroll.scrollLeft = imgWidth * (n - 1);
 }
-function stop(){
+function stop() {
   // queen = 0;
   king = 0;
 }
 
-function final(){
+function final() {
   unk = 1;
   table.disabled = true;
 }
 
-function answer(){
+function answer() {
   ans = document.getElementById("modaldrugs").value;
   if (ans == correctAns) {
     document.getElementById("final-body").innerHTML =
