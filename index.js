@@ -25,7 +25,7 @@
   ipad();
   function ipad() {
     const mql = window.matchMedia(
-      "screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)"
+      "screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: landscape)"
     );
 
     checkMedia(mql);
@@ -42,7 +42,7 @@
   ipadpro();
   function ipadpro() {
     const mql = window.matchMedia(
-      "screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)"
+      "screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape"
     );
 
     checkMedia(mql);
@@ -59,7 +59,7 @@
   ipadair();
   function ipadair() {
     const mql = window.matchMedia(
-      "screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)"
+      "screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape)"
     );
 
     checkMedia(mql);
