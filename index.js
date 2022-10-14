@@ -197,7 +197,7 @@ function roll() {
   function final() {
     unk = 1;
     table.disabled = true;
-    table.options[0].innerText = "unknown";
+    table.options[table.selectedIndex].innerText = "Unknown";
   }
 
   function answer() {
